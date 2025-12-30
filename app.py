@@ -1,6 +1,8 @@
+import os
 import streamlit as st
 import requests
 import json
+from dotenv import load_dotenv
 
 # -----------------------
 # Page configuration
@@ -38,7 +40,8 @@ st.sidebar.markdown("""
 # -----------------------
 # API Configuration
 # -----------------------
-API_KEY = ""  # Replace with your key
+load_dotenv()
+API_KEY = os.getenv("API_KEY")  # Replace with your key
 MODEL = "google/gemma-3n-e2b-it:free"
 
 # -----------------------
